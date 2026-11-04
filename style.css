@@ -95,3 +95,8 @@ footer .wrap{display:grid;gap:14px}
 .legal th,.legal td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
 .legal th{background:var(--soft)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.badge-sample{display:inline-block;background:#fff4d6;color:#7a5a00;border:1px solid #f0d78a;border-radius:6px;font-size:13px;font-weight:700;padding:3px 8px;margin-bottom:10px}
+.sample-dl{margin:0;font-size:15.5px}
+.sample-dl dt{font-weight:700;margin-top:8px}
+.sample-dl dd{margin:2px 0 0;color:var(--muted)}
+.card.sample ol{padding-left:20px;color:var(--muted);font-size:15.5px}
