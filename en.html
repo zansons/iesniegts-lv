@@ -198,13 +198,15 @@
     <h2>Request a tender search or service</h2>
     <p class="sub">Fill in the form and we usually reply within one working day with an assessment and a price. The request puts you under no obligation.</p>
     
-    <!-- action = mailto fallback without JavaScript. With JS: form.js sends to FORM_ENDPOINT or opens mailto. -->
-    <form class="order" id="order-form" action="mailto:info@iesniegts.lv" method="post" enctype="text/plain" novalidate
+    <!-- Form: without JS action goes to Web3Forms; with JS form.js sends via fetch and shows on-page confirmation. -->
+    <form class="order" id="order-form" action="https://api.web3forms.com/submit" method="POST" novalidate
       data-subject="Iesniegts.lv request (EN)"
       data-mailto-msg="Opening your email program with a prepared message. Please send it."
       data-sending-msg="Sending…"
-      data-ok-msg="Thank you! Your request has been received. We usually reply within one working day."
-      data-err-msg="Sending failed. Please try again">
+      data-ok-msg="Thank you, your request has been received! We will review it and get back to you soon."
+      data-err-msg="Could not send the request. Please try again.">
+      <input type="hidden" name="access_key" value="9e208249-0132-4646-b2b2-49e6567fa05c">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div><label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
       <div><label for="f-company">Company <span class="req" aria-hidden="true">*</span></label><input id="f-company" name="company" autocomplete="organization" required></div>
       <div><label for="f-regno">Registration number</label><input id="f-regno" name="regno" inputmode="numeric" pattern="[0-9]{11}" aria-describedby="h-regno"><div class="hint" id="h-regno">11 digits. Helps us identify your sector more accurately and check that we aren't already working with another bidder in the tender.</div></div>
@@ -215,8 +217,8 @@
           <option value="Atrast man piemērotus iepirkumus" selected>Find suitable tenders for me</option>
           <option value="EVIPD + kvalifikācijas dokumenti">ESPD + qualification documents</option>
           <option value="Pilns piedāvājums">Full bid</option>
-          <option value="Abonements — Pamata (17 €/mēn.)">Subscription — Basic (17 €/month)</option>
-          <option value="Abonements — Standarta (44 €/mēn.)">Subscription — Standard (44 €/month)</option>
+          <option value="Abonements - Pamata (17 €/mēn.)">Subscription - Basic (17 €/month)</option>
+          <option value="Abonements - Standarta (44 €/mēn.)">Subscription - Standard (44 €/month)</option>
           <option value="Vēl nezinu, gribu konsultāciju">Not sure yet, I'd like a consultation</option>
         </select></div>
       <div class="full"><label for="f-link">Tender link (EIS), if you've already found one</label><input id="f-link" name="link" placeholder="https://www.eis.gov.lv/EKEIS/Supplier/Procurement/…" aria-describedby="h-link"><div class="hint" id="h-link">Optional. If the tender is divided into lots, please specify the lot.</div></div>

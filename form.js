@@ -33,7 +33,7 @@ const W3F_ACCESS_KEY = "9e208249-0132-4646-b2b2-49e6567fa05c";
     let body = "";
     for (const k in labels) { const v = (fd.get(k) || "").toString().trim(); if (v) body += labels[k] + ": " + v + "\n"; }
     body += "\n" + L.consent + "\n";
-    const subj = T("subject") + " — " + (fd.get("company") || fd.get("name") || "");
+    const subj = T("subject") + " - " + (fd.get("company") || fd.get("name") || "");
     return "mailto:" + FALLBACK_EMAIL + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
   }
 
@@ -69,7 +69,7 @@ const W3F_ACCESS_KEY = "9e208249-0132-4646-b2b2-49e6567fa05c";
       message: (fd.get("message") || "").toString().trim(),
       consent: (fd.get("consent") || "").toString().trim(),
       access_key: W3F_ACCESS_KEY,
-      subject: T("subject") + " — " + company,
+      subject: T("subject") + " - " + company,
       from_name: (company || "Vietnes pieteikums"),
       replyto: visitorEmail,
       botcheck: ""

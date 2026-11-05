@@ -198,13 +198,15 @@
     <h2>Pieteikt iepirkumu vai pakalpojumu</h2>
     <p class="sub">Aizpildiet formu, un parasti atbildam darba dienas laikā ar izvērtējumu un cenu. Pieteikums jums neko neuzliek par pienākumu.</p>
     
-    <!-- action = mailto rezerves variants bez JavaScript. Ar JS: form.js sūta uz FORM_ENDPOINT vai atver mailto. -->
-    <form class="order" id="order-form" action="mailto:info@iesniegts.lv" method="post" enctype="text/plain" novalidate
+    <!-- Forma: bez JS action iet uz Web3Forms; ar JS form.js sūta fetch un rāda apstiprinājumu lapā. -->
+    <form class="order" id="order-form" action="https://api.web3forms.com/submit" method="POST" novalidate
       data-subject="Iesniegts.lv pieteikums"
       data-mailto-msg="Atveram jūsu e-pasta programmu ar sagatavotu vēstuli. Lūdzu, nosūtiet to."
       data-sending-msg="Sūtām…"
-      data-ok-msg="Paldies! Pieteikums saņemts. Parasti atbildam darba dienas laikā."
-      data-err-msg="Neizdevās nosūtīt. Lūdzu, mēģiniet vēlreiz">
+      data-ok-msg="Paldies, pieteikums saņemts! Mēs to izskatīsim un sazināsimies ar jums tuvākajā laikā."
+      data-err-msg="Neizdevās nosūtīt pieteikumu. Lūdzu, mēģiniet vēlreiz.">
+      <input type="hidden" name="access_key" value="9e208249-0132-4646-b2b2-49e6567fa05c">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div><label for="f-name">Vārds, uzvārds <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
       <div><label for="f-company">Uzņēmums <span class="req" aria-hidden="true">*</span></label><input id="f-company" name="company" autocomplete="organization" required></div>
       <div><label for="f-regno">Reģistrācijas numurs</label><input id="f-regno" name="regno" inputmode="numeric" pattern="[0-9]{11}" aria-describedby="h-regno"><div class="hint" id="h-regno">11 cipari. Tā precīzāk atradīsim jūsu nozari un pārbaudīsim, vai iepirkumā jau nestrādājam ar citu pretendentu.</div></div>
@@ -215,8 +217,8 @@
           <option selected>Atrast man piemērotus iepirkumus</option>
           <option>EVIPD + kvalifikācijas dokumenti</option>
           <option>Pilns piedāvājums</option>
-          <option>Abonements — Pamata (17 €/mēn.)</option>
-          <option>Abonements — Standarta (44 €/mēn.)</option>
+          <option>Abonements - Pamata (17 €/mēn.)</option>
+          <option>Abonements - Standarta (44 €/mēn.)</option>
           <option>Vēl nezinu, gribu konsultāciju</option>
         </select></div>
       <div class="full"><label for="f-link">Iepirkuma saite (EIS), ja jau atradāt</label><input id="f-link" name="link" placeholder="https://www.eis.gov.lv/EKEIS/Supplier/Procurement/…" aria-describedby="h-link"><div class="hint" id="h-link">Nav obligāti. Ja iepirkums dalīts daļās, norādiet arī daļu.</div></div>

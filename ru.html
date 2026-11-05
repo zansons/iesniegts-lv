@@ -130,15 +130,17 @@
   <div class="wrap">
     <h2>Заявка</h2>
     <p class="sub">Заполните форму — обычно отвечаем в течение рабочего дня с оценкой и ценой. Заявка ни к чему вас не обязывает.</p>
-    <form class="order" id="order-form" action="mailto:info@iesniegts.lv" method="post" enctype="text/plain" novalidate
+    <form class="order" id="order-form" action="https://api.web3forms.com/submit" method="POST" novalidate
       data-subject="Iesniegts.lv заявка (RU)"
       data-mailto-msg="Открываем вашу почтовую программу с готовым письмом. Пожалуйста, отправьте его."
       data-sending-msg="Отправляем…"
-      data-ok-msg="Спасибо! Заявка получена. Обычно отвечаем в течение рабочего дня."
-      data-err-msg="Не удалось отправить. Попробуйте ещё раз">
+      data-ok-msg="Спасибо, заявка получена! Мы её рассмотрим и свяжемся с вами в ближайшее время."
+      data-err-msg="Не удалось отправить заявку. Пожалуйста, попробуйте ещё раз.">
+      <input type="hidden" name="access_key" value="9e208249-0132-4646-b2b2-49e6567fa05c">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div><label for="f-name">Имя, фамилия <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
       <div><label for="f-company">Компания <span class="req" aria-hidden="true">*</span></label><input id="f-company" name="company" autocomplete="organization" required></div>
-      <div><label for="f-regno">Регистрационный номер</label><input id="f-regno" name="regno" inputmode="numeric" pattern="[0-9]{11}" aria-describedby="h-regno"><div class="hint" id="h-regno">11 цифр — чтобы проверить, не работаем ли мы уже с другим претендентом.</div></div>
+      <div><label for="f-regno">Регистрационный номер</label><input id="f-regno" name="regno" inputmode="numeric" pattern="[0-9]{11}" aria-describedby="h-regno"><div class="hint" id="h-regno">11 цифр - чтобы проверить, не работаем ли мы уже с другим претендентом.</div></div>
       <div><label for="f-email">E-mail <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
       <div><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
       <div><label for="f-service">Услуга <span class="req" aria-hidden="true">*</span></label>
@@ -146,8 +148,8 @@
           <option value="Atrast man piemērotus iepirkumus" selected>Найти подходящие мне закупки</option>
           <option value="EVIPD + kvalifikācijas dokumenti">EVIPD + квалификационные документы</option>
           <option value="Pilns piedāvājums">Полное предложение</option>
-          <option value="Abonements — Pamata (17 €/mēn.)">Подписка — Базовый (17 €/мес.)</option>
-          <option value="Abonements — Standarta (44 €/mēn.)">Подписка — Стандарт (44 €/мес.)</option>
+          <option value="Abonements - Pamata (17 €/mēn.)">Подписка - Базовый (17 €/мес.)</option>
+          <option value="Abonements - Standarta (44 €/mēn.)">Подписка - Стандарт (44 €/мес.)</option>
           <option value="Vēl nezinu, gribu konsultāciju">Пока не знаю, нужна консультация</option>
         </select></div>
       <div class="full"><label for="f-link">Ссылка на закупку (EIS), если уже нашли</label><input id="f-link" name="link" placeholder="https://www.eis.gov.lv/EKEIS/Supplier/Procurement/…"></div>
