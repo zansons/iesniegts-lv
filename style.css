@@ -100,3 +100,5 @@ footer .wrap{display:grid;gap:14px}
 .sample-dl dt{font-weight:700;margin-top:8px}
 .sample-dl dd{margin:2px 0 0;color:var(--muted)}
 .card.sample ol{padding-left:20px;color:var(--muted);font-size:15.5px}
+/* small phones: keep logo, languages and CTA on one line */
+@media(max-width:480px){nav.main{flex-wrap:nowrap;gap:2px}.logo{font-size:18px;gap:6px}nav.main .lang{padding:5px 6px;font-size:13px}nav.main a.btn{padding:7px 10px!important;font-size:14px!important}}
